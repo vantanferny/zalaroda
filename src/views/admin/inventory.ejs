@@ -1,0 +1,13 @@
+<header>
+    <%- include ("../partials/header") %>
+</header>
+
+<div>
+    <h2>Items Index</h2>
+    <p>
+        <% items.forEach(function (item, i) { %>
+            <p> <%= item.id %> </p>
+            <p> <%= item.name %> </p>
+        <% }) %>
+    </p>
+</div>
