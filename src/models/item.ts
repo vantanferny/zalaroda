@@ -29,4 +29,13 @@ const fetchByShop = (shopId: number) => {
   return shopItems
 }
 
-export default { all, fetchByShop }
+const get = (itemId: number) => {
+  const item =  {
+    id: itemId,
+    name: "Sample Get Item Jacket",
+  }
+
+  return item
+}
+
+export default { all, fetchByShop, get }

@@ -1,7 +1,7 @@
 import express from 'express'
 
-import Category from '../../models/category'
-import Shop from '../../models/shop'
+import Category from '../models/category'
+import Shop from '../models/shop'
 
 const router = express.Router()
 
