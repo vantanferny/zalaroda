@@ -1,9 +1,9 @@
 import express from 'express'
 
-const analytics = express.Router()
+const router = express.Router()
 
-analytics.get('/', (req, res) => {
-    res.render('admin/dashboard')
+router.get('/', (req, res) => {
+  res.render('admin/dashboard')
 })
 
-export default analytics
+export default router
