@@ -1,3 +1,12 @@
 <div>
-    SHOP
+    <b>SHOP PAGE</b>
+
+    <p> <%= shop.id %> </p>
+    <p> <%= shop.name %> </p>
+
+    <b>SHOP ITEMS</b>
+    <% shop.items().forEach(function (item, i) { %>
+        <p> <%= item.id %> </p>
+        <p> <%= item.name %> </p>
+    <% }) %>
 </div>
