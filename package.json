@@ -23,7 +23,8 @@
   "dependencies": {
     "@types/node": "^12.12.12",
     "ejs": "^3.0.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^7.17.0"
   },
   "devDependencies": {
     "typescript": "^3.7.2"

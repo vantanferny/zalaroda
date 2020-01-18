@@ -1,18 +1,32 @@
+import { Pool } from 'pg'
+
 import Item from './item'
 
-const all = () => {
-  const sampleAll = [
-    {
-      id: 1,
-      name: "NIKE SHOP"
-    },
-    {
-      id: 2,
-      name: "ADIDAS SHOP"
-    }
-  ]
+const connectionString = 'postgresql://anfernyvanta@localhost:5432/zalaroda_1'
+const pool = new Pool({
+  connectionString: connectionString,
+})
 
-  return sampleAll
+const all = async () => {
+  const res = await pool.query('SELECT * from shops').catch((error)=> {
+    return error
+  })
+
+  let shopQueryResult
+
+  if (res.code) {
+    shopQueryResult = {
+      data: [],
+      error: res.code
+    }
+  } else {
+    shopQueryResult =  {
+      data: res.rows,
+      error: null
+    }
+  }
+
+  return shopQueryResult
 }
 
 const get = (id: number) => {
