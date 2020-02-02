@@ -5,16 +5,20 @@ import Shop from '../models/shop'
 
 const router = express.Router()
 
-router.get('/', async (req, res) => {
-  const categories = Category.all()
-  const { data: shops, error } = await Shop.all()
+router.get('/', async (_, res) => {
+  const errors = []
+  const { data: categories, categoryError } = await Category.all()
+  const { data: shops, shopError } = await Shop.all()
 
-  if (error) {
+  if (categoryError) errors.push(categoryError)
+  if (shopError) errors.push(shopError)
+
+  if (errors.length > 0) {
     res.status(504)
     res.render('error',
       {
         title: '504: Gateway Timeout',
-        message: error
+        message: errors[0]
       }
     )
   } else {
