@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
 
   if (error) {
     res.status(504)
-    res.render('error',
+    res.render('util/error',
       {
         title: '504: Gateway Timeout',
         message: error
@@ -32,7 +32,7 @@ router.post('/create', async (req, res) => {
   if (success) {
     res.redirect('/internal/categories') // add message
   } else {
-    res.render('error',
+    res.render('util/error',
       {
         title: '504: Gateway Timeout',
         message: error

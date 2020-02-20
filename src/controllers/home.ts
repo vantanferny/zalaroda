@@ -15,7 +15,7 @@ router.get('/', async (_, res) => {
 
   if (errors.length > 0) {
     res.status(504)
-    res.render('error',
+    res.render('util/error',
       {
         title: '504: Gateway Timeout',
         message: errors[0]
