@@ -29,6 +29,42 @@ const all = async () => {
   return shopQueryResult
 }
 
+const create = async (shop) => {
+  const res = await pool.query(
+    `INSERT INTO
+      shops
+        (
+          name,
+          slug,
+          category_id
+        )
+      VALUES
+        (
+          '${shop.name}',
+          '${shop.slug}',
+          '${shop.category_id}'
+        )`
+  ).catch(error => {
+    return error
+  })
+
+  let shopQueryResult
+
+  if (res.code) {
+    shopQueryResult = {
+      success: false,
+      error: res.code
+    }
+  } else {
+    shopQueryResult =  {
+      success: true,
+      error: null
+    }
+  }
+
+  return shopQueryResult
+}
+
 const get = (id: number) => {
   const getShopItems = () => {
     const shopItems = Item.fetchByShop(id)
@@ -45,4 +81,4 @@ const get = (id: number) => {
   return shop
 }
 
-export default { all, get }
+export default { all, get, create }
