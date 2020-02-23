@@ -1,5 +1,8 @@
 import express from 'express'
 
+import { UserSignUpInput } from '../../types'
+import { validateSignUpInput } from '../../controllers/validation'
+
 const signup = express.Router()
 
 signup.get('/', (req, res) => {
@@ -14,14 +17,24 @@ signup.post('/', (req, res) => {
   const mobileNumber: string = req.body.mobile_number
   const password: string = req.body.password
 
-  const userInput = {
+  const signupInput: UserSignUpInput = {
     email: email,
     password: password,
     name: name,
     mobileNumber: mobileNumber,
   }
 
-  res.json(userInput)
+  const validationResult = validateSignUpInput(signupInput)
+
+  if (!validationResult.valid) {
+    res.json({errors: validationResult.errors})
+
+    return
+  }
+
+  // model shit
+
+  res.json({success: true})
 })
 
 export default signup
