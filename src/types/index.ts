@@ -1,6 +1,6 @@
-import { UserSignUpInput } from './inputs/auth'
+import { UserSignUpInput, ParsedUserSignUpInput } from './inputs/auth'
 import { ValidationResult } from './validation/validationResult'
 
 export {
-  UserSignUpInput, ValidationResult
+  UserSignUpInput, ParsedUserSignUpInput, ValidationResult
 }
