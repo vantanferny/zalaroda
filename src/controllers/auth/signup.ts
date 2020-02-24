@@ -21,7 +21,7 @@ signup.post('/', async (req, res) => {
   }
 
   const parsedSignupInput: ParsedUserSignUpInput = await parseSignUpInput(signupInput)
-  const userCreationResult: QueryResult = await User.create(parsedSignupInput) 
+  const userCreationResult: QueryResult = await User.create(parsedSignupInput)
 
   res.json({userCreationResult: userCreationResult})
 })
