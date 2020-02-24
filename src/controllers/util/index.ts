@@ -1,7 +1,9 @@
-import { sanitizeSignUpInput } from './sanitation'
+import { parseSignUpInput } from './parsing'
 import { validateSignUpInput } from './validation'
+import { encryptPassword } from './encryption'
 
 export {
-  sanitizeSignUpInput,
+  parseSignUpInput,
   validateSignUpInput,
+  encryptPassword
 }

@@ -1,7 +1,7 @@
 import express from 'express'
 
 import { UserSignUpInput, ParsedUserSignUpInput, ValidationResult } from '../../types'
-import { validateSignUpInput, sanitizeSignUpInput } from '../util'
+import { validateSignUpInput, parseSignUpInput, encryptPassword } from '../util'
 
 const signup = express.Router()
 
@@ -9,7 +9,7 @@ signup.get('/', (req, res) => {
   res.render('auth/signup', { params: null, errors: null })
 })
 
-signup.post('/', (req, res) => {
+signup.post('/', async (req, res) => {
   const signupInput: UserSignUpInput = req.body
   const validationResult: ValidationResult = validateSignUpInput(signupInput)
 
@@ -19,11 +19,10 @@ signup.post('/', (req, res) => {
     return
   }
 
-  const parsedSignupInput: ParsedUserSignUpInput = sanitizeSignUpInput(signupInput)
-
+  const parsedSignupInput: ParsedUserSignUpInput = await parseSignUpInput(signupInput)
   // model shit - if success, add session
 
-  res.json({success: true})
+  res.json({parsedSignupInput: parsedSignupInput})
 })
 
 export default signup
