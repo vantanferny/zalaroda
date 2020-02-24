@@ -1,7 +1,8 @@
 import express from 'express'
 
-import { UserSignUpInput, ParsedUserSignUpInput, ValidationResult } from '../../types'
-import { validateSignUpInput, parseSignUpInput, encryptPassword } from '../util'
+import { UserSignUpInput, ParsedUserSignUpInput, ValidationResult, QueryResult } from '../../types'
+import { validateSignUpInput, parseSignUpInput } from '../util'
+import { User } from '../../models'
 
 const signup = express.Router()
 
@@ -20,9 +21,9 @@ signup.post('/', async (req, res) => {
   }
 
   const parsedSignupInput: ParsedUserSignUpInput = await parseSignUpInput(signupInput)
-  // model shit - if success, add session
+  const userCreationResult: QueryResult = await User.create(parsedSignupInput) 
 
-  res.json({parsedSignupInput: parsedSignupInput})
+  res.json({userCreationResult: userCreationResult})
 })
 
 export default signup

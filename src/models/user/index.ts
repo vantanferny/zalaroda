@@ -1,5 +1,4 @@
 import create from './create'
+import get from './get'
 
-export {
-  create
-}
+export default { create, get }
