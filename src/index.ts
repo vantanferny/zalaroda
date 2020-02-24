@@ -2,9 +2,12 @@ import express from 'express'
 import bodyParser from 'body-parser'
 
 import controllers from './controllers'
+import { initializeEnvironment } from './util'
 
 const app = express()
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000
+
+initializeEnvironment()
 
 app.set('views', './src/views')
 app.set('view engine', 'ejs')
