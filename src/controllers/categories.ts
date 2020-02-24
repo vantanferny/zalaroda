@@ -1,10 +1,10 @@
 import express from 'express'
-import Category from '../models/category'
+import { Category } from '../models'
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  const categories = Category.all()
+router.get('/', async (req, res) => {
+  const { data: categories, categoryError } = await Category.all()
 
   res.render('customer/categories', {categories: categories})
 })

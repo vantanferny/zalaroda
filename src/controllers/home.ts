@@ -1,7 +1,6 @@
 import express from 'express'
 
-import Category from '../models/category'
-import Shop from '../models/shop'
+import { Category, Shop } from '../models'
 
 const router = express.Router()
 
