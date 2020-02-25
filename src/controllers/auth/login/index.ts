@@ -1,21 +1,11 @@
 import express from 'express'
 
+import renderLoginPage from './renderLoginPage'
+import logUserIn from './logUserIn'
+
 const login = express.Router()
 
-login.get('/', (req, res) => {
-  res.render('auth/login')
-})
-
-login.post('/', (req, res) => {
-  const email = req.body.email
-  const password = req.body.password
-
-  const userInput = {
-    email: email,
-    password: password,
-  }
-
-  res.json(userInput)
-})
+login.get('/', renderLoginPage)
+login.post('/', logUserIn)
 
 export default login
