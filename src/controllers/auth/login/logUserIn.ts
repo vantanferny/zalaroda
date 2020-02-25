@@ -1,13 +1,17 @@
+import { LoginCredentials } from '../../../types'
+
 const logUserIn = (req, res) => {
-  const email = req.body.email
-  const password = req.body.password
+  const loginCredentials: LoginCredentials = req.body
 
-  const userInput = {
-    email: email,
-    password: password,
-  }
+  // authenticate
 
-  res.json(userInput)
+  // if valid
+  // create session
+  // else
+  // render errors
+
+
+  res.json(loginCredentials)
 }
 
 export default logUserIn
