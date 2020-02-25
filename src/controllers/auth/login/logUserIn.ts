@@ -1,17 +1,19 @@
-import { LoginCredentials } from '../../../types'
+import { LoginCredentials, AuthenticationResult } from '../../../types'
+
+import authenticateLoginCredentials from './authenticateLoginCredentials'
 
 const logUserIn = (req, res) => {
   const loginCredentials: LoginCredentials = req.body
 
-  // authenticate
+  const authenticationResult: AuthenticationResult = authenticateLoginCredentials(loginCredentials)
 
-  // if valid
-  // create session
-  // else
-  // render errors
-
-
-  res.json(loginCredentials)
+  if (authenticationResult.success) {
+    // create session
+    // res.render('home', { message: "Login Successful" })
+    res.redirect('/')
+  } else {
+    res.render('auth/login', { params: loginCredentials, errors: [authenticationResult] })
+  }
 }
 
 export default logUserIn

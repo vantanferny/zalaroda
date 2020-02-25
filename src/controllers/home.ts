@@ -24,6 +24,7 @@ router.get('/', async (_, res) => {
     res.render('home', {
       categories: categories,
       shops: shops,
+      message: null,
     })
   }
 })

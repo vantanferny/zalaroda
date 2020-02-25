@@ -7,6 +7,7 @@ import {
   ValidationResult,
   UserSignupResult,
   LoginCredentials,
+  AuthenticationResult,
   ReadQueryResult,
   WriteQueryResult,
 } from './outputs'
@@ -22,6 +23,7 @@ export {
   ValidationResult,
   UserSignupResult,
   LoginCredentials,
+  AuthenticationResult,
   ReadQueryResult,
   WriteQueryResult,
 
