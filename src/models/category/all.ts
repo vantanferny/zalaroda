@@ -1,5 +1,7 @@
 import { Pool } from 'pg'
 
+// import { QueryResult } from '../../types'
+
 const all = async () => {
   const pool = new Pool({
     connectionString: process.env.connectionString,

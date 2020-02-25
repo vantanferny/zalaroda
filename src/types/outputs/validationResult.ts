@@ -3,6 +3,4 @@ type ValidationResult = {
   errors: Array<string>,
 }
 
-export {
-  ValidationResult
-}
+export default ValidationResult

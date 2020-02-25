@@ -1,13 +1,13 @@
 import { Pool } from 'pg'
 
-import { QueryResult } from '../../types'
+import { WriteQueryResult } from '../../types'
 
-const create = async (shop): Promise<QueryResult> => {
+const create = async (shop): Promise<WriteQueryResult> => {
   const pool = new Pool({
     connectionString: process.env.connectionString,
   })
 
-  const shopQueryResult: QueryResult =  {
+  const shopQueryResult: WriteQueryResult =  {
     success: true,
     error: null
   }

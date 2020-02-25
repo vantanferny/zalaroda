@@ -1,17 +1,29 @@
-import { UserSignUpInput, ParsedUserSignUpInput } from './inputs/auth'
-import { ValidationResult } from './validation/validationResult'
-import { QueryResult } from './database/queryResult'
-import { User } from './models'
+import {
+  UserSignUpInput,
+  ParsedUserSignUpInput,
+} from './inputs'
+
+import {
+  ValidationResult,
+  UserSignUpResult,
+  LoginCredentials,
+  ReadQueryResult,
+  WriteQueryResult,
+} from './outputs'
+
+import {
+  User,
+} from './models'
 
 export {
-  // Inputs
   UserSignUpInput,
   ParsedUserSignUpInput,
 
-  // Results
   ValidationResult,
-  QueryResult,
+  UserSignUpResult,
+  LoginCredentials,
+  ReadQueryResult,
+  WriteQueryResult,
 
-  // Models
   User,
 }

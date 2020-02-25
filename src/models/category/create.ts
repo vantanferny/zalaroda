@@ -1,15 +1,15 @@
 import { Pool } from 'pg'
 
-import { QueryResult } from '../../types'
+import { WriteQueryResult } from '../../types'
 
-const create = async (category): Promise<QueryResult> => {
+const create = async (category): Promise<WriteQueryResult> => {
   const pool = new Pool({
     connectionString: process.env.connectionString,
   })
 
-  const categoryQueryResult: QueryResult =  {
+  const categoryQueryResult: WriteQueryResult =  {
     success: true,
-    error: null
+    error: null,
   }
 
   const res = await pool.query(
@@ -19,7 +19,7 @@ const create = async (category): Promise<QueryResult> => {
       VALUES
         ('${category.name}')`
   ).catch(error => {
-      return error
+    return error
   })
 
   if (res.code) {
