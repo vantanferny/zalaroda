@@ -1,10 +1,6 @@
-import express from 'express'
+import { Category, Shop } from '../../models'
 
-import { Category, Shop } from '../models'
-
-const router = express.Router()
-
-router.get('/', async (_, res) => {
+const renderHomeData = async (req, res) => {
   const errors = []
   const { data: categories, categoryError } = await Category.all()
   const { data: shops, shopError } = await Shop.all()
@@ -24,9 +20,9 @@ router.get('/', async (_, res) => {
     res.render('home', {
       categories: categories,
       shops: shops,
-      message: null,
+      message: req.body.message,
     })
   }
-})
+}
 
-export default router
+export default renderHomeData
