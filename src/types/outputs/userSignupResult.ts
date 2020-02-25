@@ -1,9 +1,9 @@
 import LoginCredentials from './LoginCredentials'
 
-type UserSignUpResult = {
+type UserSignupResult = {
   success: boolean,
   loginCredentials: LoginCredentials,
   error: string,
 }
 
-export default UserSignUpResult
+export default UserSignupResult

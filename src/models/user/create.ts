@@ -1,8 +1,8 @@
 import { Pool } from 'pg'
 
-import { WriteQueryResult, ParsedUserSignUpInput } from '../../types'
+import { WriteQueryResult, ParsedUserSignupInput } from '../../types'
 
-const create = async (parsedUserInput: ParsedUserSignUpInput): Promise<WriteQueryResult> => {
+const create = async (parsedUserInput: ParsedUserSignupInput): Promise<WriteQueryResult> => {
   const pool = new Pool({
     connectionString: process.env.connectionString,
   })

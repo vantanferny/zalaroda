@@ -1,5 +1,6 @@
-import validateSignUpInput from './auth/signup'
+import { validateSignupInput, validateLoginInput } from './auth'
 
 export {
-  validateSignUpInput
+  validateSignupInput,
+  validateLoginInput
 }

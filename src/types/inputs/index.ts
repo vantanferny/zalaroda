@@ -1,9 +1,9 @@
 import {
-  UserSignUpInput,
-  ParsedUserSignUpInput,
+  UserSignupInput,
+  ParsedUserSignupInput,
 } from './auth'
 
 export {
-  UserSignUpInput,
-  ParsedUserSignUpInput,
+  UserSignupInput,
+  ParsedUserSignupInput,
 }

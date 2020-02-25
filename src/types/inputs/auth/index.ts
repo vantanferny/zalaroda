@@ -1,10 +1,10 @@
 import {
-  UserSignUpInput,
-  ParsedUserSignUpInput,
+  UserSignupInput,
+  ParsedUserSignupInput,
 } from './signup'
 
 export {
-  UserSignUpInput,
-  ParsedUserSignUpInput,
+  UserSignupInput,
+  ParsedUserSignupInput,
 }
 

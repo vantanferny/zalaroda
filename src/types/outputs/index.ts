@@ -1,5 +1,5 @@
 import ValidationResult from './ValidationResult'
-import UserSignUpResult from './userSignUpResult'
+import UserSignupResult from './userSignupResult'
 import LoginCredentials from './loginCredentials'
 import ReadQueryResult from './readQueryResult'
 import WriteQueryResult from './writeQueryResult'
@@ -8,7 +8,7 @@ import WriteQueryResult from './writeQueryResult'
 export {
   ValidationResult,
 
-  UserSignUpResult,
+  UserSignupResult,
   LoginCredentials,
 
   ReadQueryResult,

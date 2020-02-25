@@ -1,4 +1,4 @@
-type UserSignUpInput = {
+type UserSignupInput = {
   firstName: string,
   lastName: string,
   email: string,
@@ -6,7 +6,7 @@ type UserSignUpInput = {
   password: string,
 }
 
-type ParsedUserSignUpInput = {
+type ParsedUserSignupInput = {
   name: string,
   email: string,
   mobileNumber: string,
@@ -14,6 +14,6 @@ type ParsedUserSignUpInput = {
 }
 
 export {
-  UserSignUpInput,
-  ParsedUserSignUpInput,
+  UserSignupInput,
+  ParsedUserSignupInput,
 }

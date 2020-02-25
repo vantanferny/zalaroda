@@ -1,8 +1,8 @@
 import validator from 'validator'
 
-import { UserSignUpInput, ValidationResult } from '../../../../types'
+import { UserSignupInput, ValidationResult } from '../../../../types'
 
-const validateSignUpInput = (signupInput: UserSignUpInput): ValidationResult => {
+const validateSignUpInput = (signupInput: UserSignupInput): ValidationResult => {
   const validationResult: ValidationResult = {
       valid: true,
       errors: []

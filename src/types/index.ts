@@ -1,11 +1,11 @@
 import {
-  UserSignUpInput,
-  ParsedUserSignUpInput,
+  UserSignupInput,
+  ParsedUserSignupInput,
 } from './inputs'
 
 import {
   ValidationResult,
-  UserSignUpResult,
+  UserSignupResult,
   LoginCredentials,
   ReadQueryResult,
   WriteQueryResult,
@@ -16,11 +16,11 @@ import {
 } from './models'
 
 export {
-  UserSignUpInput,
-  ParsedUserSignUpInput,
+  UserSignupInput,
+  ParsedUserSignupInput,
 
   ValidationResult,
-  UserSignUpResult,
+  UserSignupResult,
   LoginCredentials,
   ReadQueryResult,
   WriteQueryResult,
