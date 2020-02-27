@@ -9,7 +9,8 @@ const logUserIn = (req, res) => {
 
   if (authenticationResult.success) {
     // create session
-    // res.render('home', { message: "Login Successful" })
+    
+    // flash message
     res.redirect('/')
   } else {
     res.render('auth/login', { params: loginCredentials, errors: [authenticationResult] })
