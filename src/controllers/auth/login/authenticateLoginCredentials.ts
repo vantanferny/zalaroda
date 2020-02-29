@@ -1,3 +1,5 @@
+import bcrypt from 'bcrypt'
+
 import { User } from '../../../models'
 import { LoginCredentials, AuthenticationResult, ReadQueryResult, User as UserType } from '../../../types'
 import { camelify } from '../../util'
@@ -15,14 +17,17 @@ const authenticateLoginCredentials = async (loginCredentials: LoginCredentials):
     authenticationResult.error = userFetchResult.error
   } else if (userFetchResult.data) {
     const fetchedUser: UserType = camelify(userFetchResult.data[0])
+    const passwordValid: boolean = await new Promise((resolve) => {
+      bcrypt.compare(loginCredentials.password, fetchedUser.password, (_, result) => {
+        resolve(result)
+      })
+    })
 
-    // bcrypt.compare(loginCredentials.password, fetchedUser.password, function(err, result) {
-    //  result == true
-    // });
-
-    authenticationResult.success = true
-    authenticationResult.sessionUser = fetchedUser
-    authenticationResult.error = null
+    if (passwordValid) {
+      authenticationResult.success = true
+      authenticationResult.sessionUser = fetchedUser
+      authenticationResult.error = null
+    }
   }
 
   return authenticationResult

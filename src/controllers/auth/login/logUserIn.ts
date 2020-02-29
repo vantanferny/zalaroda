@@ -13,7 +13,7 @@ const logUserIn = async (req, res) => {
     // add flash message here
     res.redirect('/')
   } else {
-    res.render('auth/login', { params: loginCredentials, errors: [authenticationResult] })
+    res.render('auth/login', { params: loginCredentials, errors: [authenticationResult.error] })
   }
 }
 
