@@ -4,6 +4,7 @@ import LoginCredentials from './loginCredentials'
 import AuthenticationResult from './AuthenticationResult'
 import ReadQueryResult from './readQueryResult'
 import WriteQueryResult from './writeQueryResult'
+import SessionUser from './sessionUser'
 
 export {
   ValidationResult,
@@ -12,4 +13,5 @@ export {
   AuthenticationResult,
   ReadQueryResult,
   WriteQueryResult,
+  SessionUser,
 }

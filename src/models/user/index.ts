@@ -1,4 +1,4 @@
 import create from './create'
-import get from './get'
+import fetchViaEmail from './fetchViaEmail'
 
-export default { create, get }
+export default { create, fetchViaEmail }

@@ -10,6 +10,7 @@ import {
   AuthenticationResult,
   ReadQueryResult,
   WriteQueryResult,
+  SessionUser,
 } from './outputs'
 
 import {
@@ -26,6 +27,7 @@ export {
   AuthenticationResult,
   ReadQueryResult,
   WriteQueryResult,
+  SessionUser,
 
   User,
 }

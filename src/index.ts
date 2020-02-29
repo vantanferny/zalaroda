@@ -2,7 +2,7 @@ import express from 'express'
 
 import session from 'express-session'
 import redis from 'redis'
-import * as connectRedis from 'connect-redis'
+import connectRedis from 'connect-redis'
 
 import bodyParser from 'body-parser'
 

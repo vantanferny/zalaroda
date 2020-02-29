@@ -2,15 +2,15 @@ import { LoginCredentials, AuthenticationResult } from '../../../types'
 
 import authenticateLoginCredentials from './authenticateLoginCredentials'
 
-const logUserIn = (req, res) => {
+const logUserIn = async (req, res) => {
   const loginCredentials: LoginCredentials = req.body
 
-  const authenticationResult: AuthenticationResult = authenticateLoginCredentials(loginCredentials)
+  const authenticationResult: AuthenticationResult = await authenticateLoginCredentials(loginCredentials)
 
   if (authenticationResult.success) {
-    // create session
-    
-    // flash message
+    // req.session.sessionUser = authenticationResult.sessionUser
+
+    // add flash message here
     res.redirect('/')
   } else {
     res.render('auth/login', { params: loginCredentials, errors: [authenticationResult] })

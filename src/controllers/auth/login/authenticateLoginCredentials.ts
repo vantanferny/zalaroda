@@ -1,9 +1,28 @@
-import { LoginCredentials, AuthenticationResult } from '../../../types'
+import { User } from '../../../models'
+import { LoginCredentials, AuthenticationResult, ReadQueryResult, User as UserType } from '../../../types'
+import { camelify } from '../../util'
 
-const authenticateLoginCredentials = (loginCredentials: LoginCredentials): AuthenticationResult => {
+const authenticateLoginCredentials = async (loginCredentials: LoginCredentials): Promise<AuthenticationResult> => {
   const authenticationResult: AuthenticationResult = {
-    success: true,
-    error: null
+    success: false,
+    sessionUser: null,
+    error: "Email and Password do not match."
+  }
+
+  const userFetchResult: ReadQueryResult = await User.fetchViaEmail(loginCredentials.email)
+
+  if (userFetchResult.error) {
+    authenticationResult.error = userFetchResult.error
+  } else if (userFetchResult.data) {
+    const fetchedUser: UserType = camelify(userFetchResult.data[0])
+
+    // bcrypt.compare(loginCredentials.password, fetchedUser.password, function(err, result) {
+    //  result == true
+    // });
+
+    authenticationResult.success = true
+    authenticationResult.sessionUser = fetchedUser
+    authenticationResult.error = null
   }
 
   return authenticationResult
