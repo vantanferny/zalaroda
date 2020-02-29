@@ -23,6 +23,8 @@ const authenticateLoginCredentials = async (loginCredentials: LoginCredentials):
       })
     })
 
+    delete fetchedUser.password
+
     if (passwordValid) {
       authenticationResult.success = true
       authenticationResult.sessionUser = fetchedUser

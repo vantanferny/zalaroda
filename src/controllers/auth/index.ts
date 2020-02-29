@@ -1,4 +1,5 @@
-import login from './login'
 import signup from './signup'
+import login from './login'
+import logout from './logout'
 
-export { login, signup }
+export { signup, login, logout }

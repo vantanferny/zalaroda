@@ -34,8 +34,8 @@ app.set('view engine', 'ejs')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
-app.use(controllers)
 app.use(session(sessionOptions))
+app.use(controllers)
 
 app.listen(PORT, () => {
   console.log(`🚀 🚀 🚀 Server is running in http://localhost:${PORT} 🚀 🚀 🚀`)

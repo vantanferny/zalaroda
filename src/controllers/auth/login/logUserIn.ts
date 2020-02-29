@@ -8,7 +8,7 @@ const logUserIn = async (req, res) => {
   const authenticationResult: AuthenticationResult = await authenticateLoginCredentials(loginCredentials)
 
   if (authenticationResult.success) {
-    // req.session.sessionUser = authenticationResult.sessionUser
+    req.session.user = authenticationResult.sessionUser
 
     // add flash message here
     res.redirect('/')
