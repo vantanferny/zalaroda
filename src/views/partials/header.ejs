@@ -1,11 +1,30 @@
 <header>
     <a href="/">Home</a>
-    <a href="/dashboard">Dashboard</a>
-    <a href="/inventory">Inventory</a>
-    <a href="/login">Log In</a>
-    <a href="/signup">Sign Up</a>
-    <a href="/internal">Internal</a>
-    <a href="/logout">Logout</a>
+    <% if (user && user.isAdmin) { %>
+        <a href="/internal">Internal</a>
+    <% } %>
+
+    <% if (user && user.isAdmin) { %>
+        <a href="/internal">Internal</a>
+    <% } %>
+
+    <% if (user && user.isOwner) { %>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/inventory">Inventory</a>
+    <% } %>
+
+    <% if (!user) { %>
+        <a href="/login">Log In</a>
+        <a href="/signup">Sign Up</a>
+    <% } %>
+
+    <% if (user) { %>
+        <a href="/logout">Logout</a>
+    <% } %>
+
+    <% if (user) { %>
+        <p>User: <%= user.name %></p>
+    <% } %>
 </header>
 
 <!-- temp -->

@@ -21,6 +21,7 @@ const renderHomeData = async (req, res) => {
       categories: categories,
       shops: shops,
       flash: res.locals.flash,
+      user: req.session.user,
     })
   }
 }

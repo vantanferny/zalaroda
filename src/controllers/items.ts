@@ -6,7 +6,10 @@ const router = express.Router()
 router.get('/', (req, res) => {
   const items = Item.all()
 
-  res.render('admin/inventory', {items: items})
+  res.render('admin/inventory', {
+    items: items,
+    user: req.session.user,
+  })
 })
 
 export default router
