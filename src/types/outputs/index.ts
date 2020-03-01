@@ -5,6 +5,7 @@ import AuthenticationResult from './AuthenticationResult'
 import ReadQueryResult from './readQueryResult'
 import WriteQueryResult from './writeQueryResult'
 import SessionUser from './sessionUser'
+import Flash from './Flash'
 
 export {
   ValidationResult,
@@ -14,4 +15,5 @@ export {
   ReadQueryResult,
   WriteQueryResult,
   SessionUser,
+  Flash,
 }

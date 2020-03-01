@@ -1,9 +1,13 @@
-<div id="message-box">
-    <p><%= message %></p>
+<div class="<%= flash ? flash.type : null %>">
+    <p><%= flash ? flash.message : null %></p>
 </div>
 
 <style>
-    #message-box {
-        background-color: rgb(255, 241, 113);
+    .success {
+        background-color: rgb(132, 247, 121);
+    }
+
+    .error {
+        background-color: rgb(246, 114, 114);
     }
 </style>

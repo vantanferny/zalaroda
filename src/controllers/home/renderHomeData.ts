@@ -17,12 +17,10 @@ const renderHomeData = async (req, res) => {
       }
     )
   } else {
-    const message = res.locals.flash ? res.locals.flash.message : null
-
     res.render('home', {
       categories: categories,
       shops: shops,
-      message: message,
+      flash: res.locals.flash,
     })
   }
 }

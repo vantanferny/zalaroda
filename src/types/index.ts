@@ -11,6 +11,7 @@ import {
   ReadQueryResult,
   WriteQueryResult,
   SessionUser,
+  Flash,
 } from './outputs'
 
 import {
@@ -28,6 +29,7 @@ export {
   ReadQueryResult,
   WriteQueryResult,
   SessionUser,
+  Flash,
 
   User,
 }
