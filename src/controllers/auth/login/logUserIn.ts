@@ -9,8 +9,11 @@ const logUserIn = async (req, res) => {
 
   if (authenticationResult.success) {
     req.session.user = authenticationResult.sessionUser
+    req.session.flash = {
+      type: 'success',
+      message: 'Login Successful.',
+    }
 
-    // add flash message here
     res.redirect('/')
   } else {
     res.render('auth/login', { params: loginCredentials, errors: [authenticationResult.error] })
