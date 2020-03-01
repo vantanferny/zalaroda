@@ -17,10 +17,15 @@ const logUserIn = async (req, res) => {
 
     res.redirect('/')
   } else {
+    const flash: Flash = {
+      type: 'error',
+      message: authenticationResult.error,
+    }
 
-    // redirect instead of render fucker.
+    req.session.flash = flash
+    req.session.params = loginCredentials
 
-    res.render('auth/login', { params: loginCredentials, errors: [authenticationResult.error] })
+    res.redirect('/login')
   }
 }
 

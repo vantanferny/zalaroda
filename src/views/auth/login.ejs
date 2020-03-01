@@ -1,10 +1,5 @@
 <%- include ("../partials/header") %>
-
-<div class="error-box">
-    <% if (errors) { errors.forEach((error) => { %>
-        <p> <%= error %> </p>
-    <% })} %>
-</div>
+<%- include ("../partials/messageBox") %>
 
 <h1>Login</h1>
 
