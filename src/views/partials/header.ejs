@@ -4,10 +4,6 @@
         <a href="/internal">Internal</a>
     <% } %>
 
-    <% if (user && user.isAdmin) { %>
-        <a href="/internal">Internal</a>
-    <% } %>
-
     <% if (user && user.isOwner) { %>
         <a href="/dashboard">Dashboard</a>
         <a href="/inventory">Inventory</a>
