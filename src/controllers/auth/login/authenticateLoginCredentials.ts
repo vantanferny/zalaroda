@@ -25,9 +25,11 @@ const authenticateLoginCredentials = async (loginCredentials: LoginCredentials):
 
     delete fetchedUser.password
 
+    const sessionUser = { ... fetchedUser, shopName: null }
+
     if (passwordValid) {
       authenticationResult.success = true
-      authenticationResult.sessionUser = fetchedUser
+      authenticationResult.sessionUser = sessionUser
       authenticationResult.error = null
     }
   }

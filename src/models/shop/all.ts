@@ -17,7 +17,7 @@ const all = async () => {
       error: res.code
     }
   } else {
-    shopQueryResult =  {
+    shopQueryResult = {
       data: res.rows,
       error: null
     }

@@ -22,6 +22,11 @@
     <% if (user) { %>
         <p>User: <%= user.name %></p>
     <% } %>
+
+    <% if (user && user.isOwner) { %>
+        <p>Shop Name: <%= user.shopName %></p>
+    <% } %>
+
 </header>
 
 <!-- temp -->
