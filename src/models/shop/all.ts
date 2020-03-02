@@ -1,6 +1,8 @@
 import { Pool } from 'pg'
 
-const all = async () => {
+import { ReadQueryResult } from '../../types'
+
+const all = async (): Promise<ReadQueryResult> => {
   const pool = new Pool({
     connectionString: process.env.connectionString,
   })
@@ -9,7 +11,7 @@ const all = async () => {
     return error
   })
 
-  let shopQueryResult
+  let shopQueryResult: ReadQueryResult
 
   if (res.code) {
     shopQueryResult = {

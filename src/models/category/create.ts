@@ -1,8 +1,8 @@
 import { Pool } from 'pg'
 
-import { WriteQueryResult } from '../../types'
+import { WriteQueryResult, Category } from '../../types'
 
-const create = async (category): Promise<WriteQueryResult> => {
+const create = async (category: Category): Promise<WriteQueryResult> => {
   const pool = new Pool({
     connectionString: process.env.connectionString,
   })
@@ -15,9 +15,15 @@ const create = async (category): Promise<WriteQueryResult> => {
   const res = await pool.query(
     `INSERT INTO
       categories
-        (name)
+        (
+          name,
+          slug
+        )
       VALUES
-        ('${category.name}')`
+        (
+          '${category.name}',
+          '${category.slug}'
+        )`
   ).catch(error => {
     return error
   })

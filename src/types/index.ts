@@ -16,6 +16,8 @@ import {
 
 import {
   User,
+  Category,
+  Shop,
 } from './models'
 
 export {
@@ -32,4 +34,6 @@ export {
   Flash,
 
   User,
+  Category,
+  Shop,
 }

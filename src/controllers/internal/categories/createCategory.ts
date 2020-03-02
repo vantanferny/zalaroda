@@ -1,8 +1,13 @@
 import { Category } from '../../../models'
+import { Category as CategoryType } from '../../../types'
+import { slugifier } from '../../util'
 
 const createCategory = async (req, res) => {
-  const name = req.body.name
-  const category = {name: name} //typescript this shit
+  const category: CategoryType = {
+    id: null,
+    name: req.body.name,
+    slug: slugifier(req.body.name)
+  }
 
   const { success, error } = await Category.create(category)
 

@@ -12,7 +12,7 @@ const getAllCategories = async (req, res) => {
       }
     )
   } else {
-    res.render('internal/categories', {categories: categories})
+    res.render('internal/categories', { categories: categories })
   }
 }
 

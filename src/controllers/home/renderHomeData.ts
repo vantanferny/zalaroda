@@ -2,8 +2,8 @@ import { Category, Shop } from '../../models'
 
 const renderHomeData = async (req, res) => {
   const errors = []
-  const { data: categories, categoryError } = await Category.all()
-  const { data: shops, shopError } = await Shop.all()
+  const { data: categories, error: categoryError } = await Category.all()
+  const { data: shops, error: shopError } = await Shop.all()
 
   if (categoryError) errors.push(categoryError)
   if (shopError) errors.push(shopError)
