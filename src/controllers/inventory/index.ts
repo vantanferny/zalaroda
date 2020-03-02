@@ -1,9 +1,9 @@
 import express from 'express'
-import { Item } from '../models'
+import { Item } from '../../models'
 
-const router = express.Router()
+const inventory = express.Router()
 
-router.get('/', (req, res) => {
+inventory.get('/', (req, res) => {
   const items = Item.all()
 
   res.render('admin/inventory', {
@@ -12,4 +12,4 @@ router.get('/', (req, res) => {
   })
 })
 
-export default router
+export default inventory

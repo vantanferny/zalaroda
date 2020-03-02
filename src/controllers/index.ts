@@ -5,7 +5,7 @@ import { signup, login, logout } from './auth'
 import categories from './categories'
 import home from './home'
 import internal from './internal'
-import items from './items'
+import inventory from './inventory'
 import shops from './shops'
 
 const controllers = express.Router()
@@ -17,7 +17,7 @@ controllers.use('/logout', logout)
 controllers.use('/categories', categories)
 controllers.use('/shops', shops)
 controllers.use('/dashboard', analytics)
-controllers.use('/inventory', items)
+controllers.use('/inventory', inventory)
 controllers.use('/internal', internal)
 
 export default controllers
