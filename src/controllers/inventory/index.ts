@@ -1,15 +1,9 @@
 import express from 'express'
-import { Item } from '../../models'
+
+import renderShopItems from './renderShopItems'
 
 const inventory = express.Router()
 
-inventory.get('/', (req, res) => {
-  const items = Item.all()
-
-  res.render('admin/inventory', {
-    items: items,
-    user: req.session.user,
-  })
-})
+inventory.get('/', renderShopItems)
 
 export default inventory
