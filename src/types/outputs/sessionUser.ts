@@ -4,7 +4,7 @@ type SessionUser = {
   isAdmin: boolean,
   isOwner: boolean,
   shopId: number,
-  shopName: number,
+  shopName: string,
   cart: object,
 }
 

@@ -1,4 +1,4 @@
-import { LoginCredentials, AuthenticationResult, Flash, SessionUser, ReadQueryResult } from '../../../types'
+import { LoginCredentials, AuthenticationResult, Flash, SessionUser, ReadQueryResult, Shop as Shoptype } from '../../../types'
 import { Shop } from '../../../models'
 import authenticateLoginCredentials from './authenticateLoginCredentials'
 
@@ -13,7 +13,7 @@ const logUserIn = async (req, res) => {
       const shopQueryResult: ReadQueryResult = await Shop.fetchViaId(sessionUser.shopId)
 
       if (!shopQueryResult.error) {
-        const shop = shopQueryResult.data[0]
+        const shop: Shoptype = shopQueryResult.data[0]
 
         sessionUser.shopName = shop.name
       }
