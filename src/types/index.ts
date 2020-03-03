@@ -11,6 +11,7 @@ import {
   ReadQueryResult,
   CategoryReadQueryResult,
   ShopReadQueryResult,
+  ItemReadQueryResult,
   WriteQueryResult,
   SessionUser,
   Flash,
@@ -20,6 +21,7 @@ import {
   User,
   Category,
   Shop,
+  Item,
 } from './models'
 
 export {
@@ -33,6 +35,7 @@ export {
   ReadQueryResult,
   CategoryReadQueryResult,
   ShopReadQueryResult,
+  ItemReadQueryResult,
   WriteQueryResult,
   SessionUser,
   Flash,
@@ -40,4 +43,5 @@ export {
   User,
   Category,
   Shop,
+  Item,
 }

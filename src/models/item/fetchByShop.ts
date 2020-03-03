@@ -1,16 +1,42 @@
-const fetchByShop = (shopId: number) => {
-  const shopItems = [
-    {
-      id: 1,
-      name: "Sample Fetched Shop Item Jacket",
-    },
-    {
-      id: 2,
-      name: "Sample Fetched Shop Item Shoe",
-    }
-  ]
+import { Pool } from 'pg'
 
-  return shopItems
+import { ItemReadQueryResult } from '../../types'
+
+const fetchByShop = async (shopId: number): Promise<ItemReadQueryResult> => {
+  const pool = new Pool({
+    connectionString: process.env.connectionString,
+  })
+
+  const res = await pool.query(
+    `
+      SELECT
+        *
+      FROM
+        items
+      WHERE
+        shop_id = '${shopId}'
+      LIMIT
+        1
+    `
+  ).catch(error => {
+    return error
+  })
+
+  let itemReadQueryResult: ItemReadQueryResult
+
+  if (res.code) {
+    itemReadQueryResult = {
+      data: [],
+      error: res.code
+    }
+  } else {
+    itemReadQueryResult = {
+      data: res.rows,
+      error: null
+    }
+  }
+
+  return itemReadQueryResult
 }
 
 export default fetchByShop

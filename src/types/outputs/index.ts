@@ -5,6 +5,7 @@ import AuthenticationResult from './AuthenticationResult'
 import ReadQueryResult from './readQueryResult'
 import CategoryReadQueryResult from './categoryReadQueryResult'
 import ShopReadQueryResult from './shopReadQueryResult'
+import ItemReadQueryResult from './ItemReadQueryResult'
 import WriteQueryResult from './writeQueryResult'
 import SessionUser from './sessionUser'
 import Flash from './Flash'
@@ -17,6 +18,7 @@ export {
   ReadQueryResult,
   CategoryReadQueryResult,
   ShopReadQueryResult,
+  ItemReadQueryResult,
   WriteQueryResult,
   SessionUser,
   Flash,
