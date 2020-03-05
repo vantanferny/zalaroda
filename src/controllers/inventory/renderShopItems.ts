@@ -13,7 +13,7 @@ const renderShopItems = async (req, res) => {
         message: "Error fetching Items."
       })
     } else {
-      res.render('admin/inventory', {
+      res.render('owner/inventory', {
         items: items,
         user: req.session.user,
       })

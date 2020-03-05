@@ -1,0 +1,25 @@
+<%- include ("../../partials/header") %>
+<h1> Add Item Page</h1>
+
+<form action="/inventory/create" method="post">
+    <input type="hidden" name="shop_id">
+
+    <label for="name">Enter Item name: </label>
+    <input id="name" type="text" name="name">
+
+    <label for="description">Enter Item description: </label>
+    <textarea id="description" type="text" name="description"></textarea>
+
+    <label for="price">Enter Item price: </label>
+    <input id="price" type="text" name="price">
+
+    <label for="stock">Enter Item stock: </label>
+    <input id="stock" type="text" name="stock">
+
+    <label for="isActive"> I have a car</label><br>
+    <input type="checkbox" id="isActive" name="isActive" value="true">
+
+    <!-- upload photo here next time -->
+
+    <input type="submit">
+</form>
