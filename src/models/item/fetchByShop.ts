@@ -15,8 +15,6 @@ const fetchByShop = async (shopId: number): Promise<ItemReadQueryResult> => {
         items
       WHERE
         shop_id = '${shopId}'
-      LIMIT
-        1
     `
   ).catch(error => {
     return error

@@ -12,7 +12,7 @@ const renderNewShopPage = async (req, res) => {
       }
     )
   } else {
-    res.render('internal/shops/new', {categories: categories})
+    res.render('internal/shops/new', { categories: categories, user: req.session.user })
   }
 }
 

@@ -1,28 +1,33 @@
 import { slugifier } from '../util'
 
 import { Item } from '../../models'
-import { Item as ItemType } from '../../types'
+import { Item as ItemType, Flash } from '../../types'
 
 const createItem = async (req, res) => {
   const item: ItemType = req.body
 
   item.slug = slugifier(item.name)
-  item.is_active = item.is_active ? true : false
+  item.isActive = item.isActive ? true : false
 
-  // const { success, error } = await Item.create(item)
+  const { success, error } = await Item.create(item)
+2
+  if (success) {
+    const flash: Flash = {
+      type: 'success',
+      message: 'Item successfully created.',
+    }
 
-  res.json(item)
+    req.session.flash = flash
 
-  // if (success) {
-  //   res.redirect('/internal/shops') // add message
-  // } else {
-  //   res.render('util/error',
-  //     {
-  //       title: '504: Gateway Timeout',
-  //       message: error
-  //     }
-  //   )
-  // }
+    res.redirect('/inventory')
+  } else {
+    res.render('util/error',
+      {
+        title: '504: Gateway Timeout',
+        message: error
+      }
+    )
+  }
 }
 
 export default createItem

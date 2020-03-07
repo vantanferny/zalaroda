@@ -12,7 +12,7 @@ const getAllShops = async (req, res) => {
       }
     )
   } else {
-    res.render('internal/shops', {shops: shops})
+    res.render('internal/shops',  {shops: shops, user: req.session.user })
   }
 }
 

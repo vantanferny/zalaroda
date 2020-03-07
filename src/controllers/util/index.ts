@@ -1,4 +1,4 @@
-import { parseSignUpInput, slugifier, camelify } from './parsing'
+import { parseSignUpInput, slugifier, camelify, snakeify } from './parsing'
 import { validateSignupInput } from './validation'
 import { encryptPassword } from './encryption'
 
@@ -7,5 +7,6 @@ export {
   validateSignupInput,
   encryptPassword,
   slugifier,
-  camelify
+  camelify,
+  snakeify,
 }

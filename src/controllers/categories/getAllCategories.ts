@@ -12,7 +12,7 @@ const getAllCategories = async (req, res) => {
       }
     )
   } else {
-    res.render('customer/categories', { categories: categories })
+    res.render('customer/categories', { categories: categories, user: req.session.user })
   }
 }
 

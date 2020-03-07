@@ -1,13 +1,13 @@
 type Item = {
   id: number,
-  shop_id: number,
+  shopId: number,
   name: string,
   slug: string,
   description: string,
   price: number,
   stock: number,
   photo: string,
-  is_active: boolean,
+  isActive: boolean,
 }
 
 export default Item
