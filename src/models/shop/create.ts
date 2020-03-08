@@ -24,7 +24,7 @@ const create = async (shop): Promise<WriteQueryResult> => {
         (
           '${shop.name}',
           '${shop.slug}',
-          '${shop.category_id}'
+          '${shop.categoryId}'
         )`
   ).catch(error => {
     return error

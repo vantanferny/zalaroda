@@ -5,8 +5,8 @@
     <label for="name">Enter Shop name: </label>
     <input id="name" type="text" name="name">
 
-    <label for="category_id">Pick Category: </label>
-    <select id="category_id" name="category_id">
+    <label for="categoryId">Pick Category: </label>
+    <select id="categoryId" name="categoryId">
     <% categories.forEach(function (category, i) { %>
         <option value="<%= category.id %>"> <%= category.name %> </option>
     <% }) %>

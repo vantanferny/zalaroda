@@ -1,0 +1,8 @@
+<div>
+    <b>CATEGORIES (limited view)</b>
+    <a href="/categories">View more</a>
+    <% categories.forEach(function (category, i) { %>
+        <p> <%= category.id %> </p>
+        <p> <%= category.name %> </p>
+    <% }) %>
+</div>
