@@ -1,6 +1,7 @@
 import { Pool } from 'pg'
 
 import { ShopReadQueryResult } from '../../types'
+import { camelify } from '../util'
 
 const all = async (): Promise<ShopReadQueryResult> => {
   const pool = new Pool({
@@ -19,8 +20,12 @@ const all = async (): Promise<ShopReadQueryResult> => {
       error: res.code
     }
   } else {
+    const shops = res.rows.map((shop) => {
+      return camelify(shop)
+    })
+
     shopQueryResult = {
-      data: res.rows,
+      data: shops,
       error: null
     }
   }

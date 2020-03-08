@@ -3,10 +3,23 @@
 
 <div>
     <b>INTERNAL SHOPS</b>
-    <% shops.forEach(function (shop, i) { %>
-        <p> <%= shop.id %> </p>
-        <p> <%= shop.name %> </p>
-    <% }) %>
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Slug</th>
+            <th>Category Id</th>
+        </tr>
+        <% shops.forEach(function (shop, i) { %>
+        <tr>
+            <td> <%= shop.id %> </td>
+            <td> <%= shop.name %> </td>
+            <td> <%= shop.slug %> </td>
+            <td> <%= shop.categoryId %> </td>
+        </tr>
+        <% }) %>
+    </table>
 </div>
 
 <a href="/internal/shops/new">Create Shop</a>
