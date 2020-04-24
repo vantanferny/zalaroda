@@ -1,4 +1,13 @@
 <div>
     <h1>Category Page</h1>
     <%= category %>
+    <br>
+    <% shops.forEach((shop) => { %>
+        <br>
+        <a href="/shops/<%= shop.slug %>">
+            <div class="shop">
+                <p> <%= shop.name %> </p>
+            </div>
+        </a>
+    <% }) %>
 </div>
