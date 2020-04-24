@@ -1,6 +1,6 @@
 import all from './all'
 import create from './create'
-import get from './get'
+import fetchViaSlug from './fetchViaSlug'
 import fetchByShop from './fetchByShop'
 
-export default { all, create, get, fetchByShop }
+export default { all, create, fetchViaSlug, fetchByShop }

@@ -4,9 +4,12 @@
     <p> <%= shop.id %> </p>
     <p> <%= shop.name %> </p>
 
-    <b>SHOP ITEMS</b>
+    <b>ITEMS</b>
     <% items.forEach(function (item, i) { %>
-        <p> <%= item.id %> </p>
-        <p> <%= item.name %> </p>
+        <a href="/shops/<%= shop.slug %>/<%= item.slug %>">
+            <div class="item">
+                <p> <%= item.name %> </p>
+            </div>
+        </a>
     <% }) %>
 </div>

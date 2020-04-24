@@ -6,6 +6,6 @@ import renderShopItem from './renderShopItem'
 const shops = express.Router()
 
 shops.get('/:shop_slug', renderShopPage)
-shops.get('/:shop_slug/:item_id', renderShopItem)
+shops.get('/:shop_slug/:item_slug', renderShopItem)
 
 export default shops

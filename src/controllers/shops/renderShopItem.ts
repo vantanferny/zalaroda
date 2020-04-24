@@ -1,8 +1,8 @@
 import { Item } from '../../models'
 
-const renderShopItem = (req, res) => {
-  const itemId = req.params.item_id
-  const item = Item.get(itemId)
+const renderShopItem = async (req, res) => {
+  const { data: itemFetchResult } = await Item.fetchViaSlug(req.params.item_slug)
+  const item = itemFetchResult[0]
 
   res.render('customer/item', {item: item})
 }
