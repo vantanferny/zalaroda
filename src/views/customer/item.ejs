@@ -1,5 +1,22 @@
-<div>
-    <b>ITEM PAGE</b>
-    <p> <%= item.id %> </p>
-    <p> <%= item.name %> </p>
+<%- include ("../partials/header") %>
+
+<div id="main-container">
+    <p id="label"><%= item.name %></p>
+    <p id="label"><%= item.description %></p>
+    <p id="label"><%= item.stock %></p>
 </div>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+#main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+</style>

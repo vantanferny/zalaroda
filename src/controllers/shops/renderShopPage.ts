@@ -22,7 +22,13 @@ const renderShopPage = async (req, res) => {
       }
     )
   } else {
-    res.render('customer/shop', {shop: shop, items: items})
+    const data = {
+      shop: shop,
+      items: items,
+      user: req.session.user
+    }
+
+    res.render('customer/shop', data)
   }
 }
 
