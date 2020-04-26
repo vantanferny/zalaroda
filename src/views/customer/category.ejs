@@ -1,13 +1,57 @@
-<div>
-    <h1>Category Page</h1>
-    <%= category %>
-    <br>
-    <% shops.forEach((shop) => { %>
-        <br>
-        <a href="/shops/<%= shop.slug %>">
-            <div class="shop">
+<%- include ("../partials/header") %>
+
+<div id="main-container">
+    <b id="label"><%= category %></b>
+    <div id="shops-container">
+    <% shops.forEach(function (shop, i) { %>
+        <a href="/shops/<%= shop.slug %>" class="shop">
+            <div>
                 <p> <%= shop.name %> </p>
             </div>
         </a>
     <% }) %>
+    </div>
 </div>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+#main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#shops-container {
+    margin: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: 80%;
+}
+
+.shop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 300px;
+    width: 45%;
+    margin: 10px 0 10px 0;
+    border: 1px solid black;
+
+    color: black;
+    text-decoration: none;
+}
+
+.shop:hover {
+    background-color: rgb(200, 200, 200);
+    transition-duration: 1s;
+}
+</style>

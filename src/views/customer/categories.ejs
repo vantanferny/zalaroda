@@ -1,20 +1,63 @@
 <%- include ("../partials/header") %>
 
-<div>
-    <b>Categories</b>
-    <% categories.forEach((category) => { %>
-    <a href="/categories/<%= category.slug %>">
-        <div class="category">
-            <p> <%= category.name %> </p>
-        </div>
-    </a>
+<div id="main-container">
+    <b id="label">Categories <a href="/categories" class="link">View More</a></b>
+    <div id="categories-container">
+    <% categories.forEach(function (category, i) { %>
+        <a href="/categories/<%= category.slug %>" class="category">
+            <div>
+                <p> <%= category.name %> </p>
+            </div>
+        </a>
     <% }) %>
+    </div>
 </div>
 
 <style>
-    .category {
-        height: 50px;
-        width: 50px;
-        border: 1px solid black;
-    }
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+#main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#categories-container {
+    margin: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: 80%;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 300px;
+    width: 45%;
+    margin: 10px 0 10px 0;
+    border: 1px solid black;
+
+    color: black;
+    text-decoration: none;
+}
+
+.category:hover {
+    background-color: rgb(200, 200, 200);
+    transition-duration: 1s;
+}
+
+.link {
+    text-decoration: none;
+    color: blue;
+}
+
 </style>
