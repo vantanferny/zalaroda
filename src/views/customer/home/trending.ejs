@@ -1,7 +1,50 @@
-<div>
-    <b>TRENDING SHOPS</b>
+<div id="main-container">
+    <b id="label">Trending Shops</b>
+    <div id="shops-container">
     <% shops.forEach(function (shop, i) { %>
-        <p> <%= shop.id %> </p>
-        <p> <%= shop.name %> </p>
+        <a href="/shops/<%= shop.slug %>" class="shop">
+            <div>
+                <p> <%= shop.name %> </p>
+            </div>
+        </a>
     <% }) %>
+    </div>
 </div>
+
+<style>
+
+#main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#shops-container {
+    margin: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: 80%;
+}
+
+.shop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 300px;
+    width: 45%;
+    margin: 10px 0 10px 0;
+    border: 1px solid black;
+
+    color: black;
+    text-decoration: none;
+}
+
+.shop:hover {
+    background-color: rgb(200, 200, 200);
+    transition-duration: 1s;
+}
+</style>

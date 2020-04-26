@@ -1,8 +1,52 @@
-<div>
-    <b>CATEGORIES (limited view)</b>
-    <a href="/categories">View more</a>
+<div id="main-container">
+    <b id="label">Categories</b>
+    <div id="categories-container">
     <% categories.forEach(function (category, i) { %>
-        <p> <%= category.id %> </p>
-        <p> <%= category.name %> </p>
+        <a href="/categories/<%= category.slug %>" class="category">
+            <div>
+                <p> <%= category.name %> </p>
+            </div>
+        </a>
     <% }) %>
+    </div>
 </div>
+
+<style>
+
+#main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#categories-container {
+    margin: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: 80%;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 300px;
+    width: 45%;
+    margin: 10px 0 10px 0;
+    border: 1px solid black;
+
+    color: black;
+    text-decoration: none;
+}
+
+.category:hover {
+    background-color: rgb(200, 200, 200);
+    transition-duration: 1s;
+}
+</style>
+
+
