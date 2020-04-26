@@ -1,7 +1,7 @@
 <%- include ("../../partials/header") %>
-<h1> Add Item </h1>
+<h1> Edit Item</h1>
 
-<form action="/inventory/create" method="post">
+<form action="/inventory/edit" method="post">
     <input type="hidden" name="shopId" value="<%= user.shopId %>">
 
     <label for="name">Enter Item name: </label>

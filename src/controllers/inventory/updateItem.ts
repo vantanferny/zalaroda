@@ -3,7 +3,7 @@ import { slugifier } from '../util'
 import { Item } from '../../models'
 import { Item as ItemType, Flash } from '../../types'
 
-const createItem = async (req, res) => {
+const updateItem = async (req, res) => {
   const item: ItemType = req.body
 
   item.slug = slugifier(item.name)
@@ -30,4 +30,4 @@ const createItem = async (req, res) => {
   }
 }
 
-export default createItem
+export default updateItem

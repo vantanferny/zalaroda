@@ -2,12 +2,23 @@
 <%- include ("../../partials/messageBox") %>
 
 <div class="items">
-    <h2>Items Index</h2>
+    <h2>Inventory</h2>
     <a href="/inventory/add">Add Item</a>
+
+    <table style="width:100%">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
     <% items.forEach(function (item, i) { %>
-        <p> <%= item.id %> </p>
-        <p> <%= item.name %> </p>
+    <tr>
+        <td> <%= item.id %> </td>
+        <td> <%= item.name %> </td>
+        <td> <a href="/inventory/view">View</a> </td>
+        <td> <a href="/inventory/edit">Edit</a> </td>
+    </tr>
     <% }) %>
+    </table>
 </div>
 
 <style>
