@@ -1,24 +1,24 @@
 <%- include ("../../partials/header") %>
 <h1> Edit Item</h1>
 
-<form action="/inventory/edit" method="post">
-    <input type="hidden" name="shopId" value="<%= user.shopId %>">
+<form action="/inventory/update" method="post">
+    <input type="hidden" name="id" value="<%= item.id %>">
+    <input type="hidden" name="slug" value="<%= item.slug %>">
 
     <label for="name">Enter Item name: </label>
-    <input id="name" type="text" name="name">
+    <input id="name" type="text" name="name" value="<%= item.name %>">
 
     <label for="description">Enter Item description: </label>
-    <textarea id="description" type="text" name="description"></textarea>
+    <textarea id="description" type="text" name="description"><%= item.description %></textarea>
 
     <label for="price">Enter Item price: </label>
-    <input id="price" type="text" name="price">
+    <input id="price" type="text" name="price" value="<%= item.price %>">
 
     <label for="stock">Enter Item stock: </label>
-    <input id="stock" type="text" name="stock">
+    <input id="stock" type="text" name="stock" value="<%= item.stock %>">
 
     <label for="isActive"> Active? </label><br>
-    <input type="checkbox" id="isActive" name="isActive" value="true">
-
+    <input type="checkbox" id="isActive" name="isActive" <%= item.isActive ? "checked" : "unchecked" %>>
     <!-- upload photo here next time -->
 
     <input id="submit" type="submit">

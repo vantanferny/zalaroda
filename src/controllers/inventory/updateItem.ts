@@ -1,25 +1,19 @@
-import { slugifier } from '../util'
-
 import { Item } from '../../models'
 import { Item as ItemType, Flash } from '../../types'
 
 const updateItem = async (req, res) => {
   const item: ItemType = req.body
-
-  item.slug = slugifier(item.name)
-  item.isActive = item.isActive ? true : false
-
-  const { success, error } = await Item.create(item)
+  const { success, error } = await Item.update(item)
 
   if (success) {
     const flash: Flash = {
       type: 'success',
-      message: 'Item successfully created.',
+      message: 'Item successfully updated.',
     }
 
     req.session.flash = flash
 
-    res.redirect('/inventory')
+    res.redirect(`/inventory/view/${item.slug}`)
   } else {
     res.render('util/error',
       {

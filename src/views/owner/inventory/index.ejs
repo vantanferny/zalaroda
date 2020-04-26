@@ -14,8 +14,8 @@
     <tr>
         <td> <%= item.id %> </td>
         <td> <%= item.name %> </td>
-        <td> <a href="/inventory/view">View</a> </td>
-        <td> <a href="/inventory/edit">Edit</a> </td>
+        <td> <a href="/inventory/view/<%= item.slug %>">View</a> </td>
+        <td> <a href="/inventory/edit/<%= item.slug %>">Edit</a> </td>
     </tr>
     <% }) %>
     </table>
