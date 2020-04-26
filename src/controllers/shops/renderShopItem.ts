@@ -1,10 +1,10 @@
 import { Item } from '../../models'
 
 const renderShopItem = async (req, res) => {
-  const { data: itemFetchResult } = await Item.fetchViaSlug(req.params.item_slug)
-  const item = itemFetchResult[0]
+  const itemFetchResult = await Item.fetchViaSlug(req.params.item_slug)
+  const item = itemFetchResult.data[0]
 
-  res.render('customer/item', {item: item})
+  res.render('customer/item', { item: item })
 }
 
 export default renderShopItem
