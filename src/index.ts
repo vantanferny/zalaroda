@@ -22,6 +22,8 @@ app.use(initializedSession)
 app.use(sessionFlash)
 app.use(sessionParams)
 app.use(controllers)
+app.use(express.static('public'));
+app.use('/assets', express.static(__dirname + '/assets'));
 
 app.listen(PORT, () => {
   console.log(`🚀 🚀 🚀 Server is running in http://localhost:${PORT} 🚀 🚀 🚀`)

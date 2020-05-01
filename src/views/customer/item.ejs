@@ -1,9 +1,22 @@
 <%- include ("../partials/header") %>
 
 <div id="main-container">
-    <p id="label"><%= item.name %></p>
-    <p id="label"><%= item.description %></p>
-    <p id="label"><%= item.stock %></p>
+    <div id="item-photo">
+    </div>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><%= item.name %></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><%= item.description %></td>
+        </tr>
+        <tr>
+            <td>Stock Left</td>
+            <td><%= item.stock %></td>
+        </tr>
+    </table>
 </div>
 
 <style>
@@ -19,4 +32,12 @@ body {
     justify-content: center;
     flex-direction: column;
 }
+
+#item-photo {
+    background-image: url("../../assets/jordan-720.jpg");
+    background-size: cover;
+    height: 350px;
+    width: 500px;
+}
+
 </style>
