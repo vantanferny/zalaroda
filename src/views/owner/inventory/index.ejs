@@ -9,11 +9,15 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>Price</th>
+        <th>Status</th>
     </tr>
     <% items.forEach(function (item, i) { %>
     <tr>
         <td> <%= item.id %> </td>
         <td> <%= item.name %> </td>
+        <td> <%= item.price %> </td>
+        <td> <%= item.isActive %> </td>
         <td> <a href="/inventory/view/<%= item.slug %>">View</a> </td>
         <td> <a href="/inventory/edit/<%= item.slug %>">Edit</a> </td>
     </tr>
@@ -22,6 +26,11 @@
 </div>
 
 <style>
+    body {
+        margin: 0;
+        font-family: 'Lato', sans-serif;
+    }
+
     .items {
         border: 1px solid blue;
     }

@@ -1,5 +1,6 @@
 import { Item } from '../../models'
 import { SessionUser } from '../../types'
+import { camelify } from '../util'
 
 const renderShopItems = async (req, res) => {
   const user: SessionUser = req.session.user
@@ -13,8 +14,12 @@ const renderShopItems = async (req, res) => {
         message: "Error fetching Items."
       })
     } else {
-      res.render('owner/inventory', {
-        items: items,
+        const parsedItems = items.map((item)=> {
+          return camelify(item)
+        })
+
+        res.render('owner/inventory', {
+        items: parsedItems,
         user: req.session.user,
       })
     }
